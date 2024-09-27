@@ -1,0 +1,15 @@
+{
+  "name": "dt207g-projekt-webbplats",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html"
+  },  
+  "keywords": [],
+  "author": "Sabina Liljeström",
+  "license": "ISC",
+  "description": "Webbplats för projekt i kursen dt207g",
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  }
+}

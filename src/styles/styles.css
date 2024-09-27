@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    background: #B4AFA1;
+    color: #fff;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+.logo {
+    color: #8A6843;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+}
+
+.nav-list li {
+    margin-left: 2rem;
+}
+
+.nav-list a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-list a:hover {
+    color: #8A6843;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    height: 4px;
+    width: 25px;
+    background: #fff;
+    margin: 4px 0;
+    transition: all 0.3s ease;
+}
+
+/* Responsiv styling */
+@media (max-width: 768px) {
+    .nav-list {
+        position: absolute;
+        top: 60px; /* höjden av navbaren */
+        left: 0;
+        width: 100%;
+        background: #747F6C;
+        flex-direction: column;
+        align-items: center;
+        display: none; /* döljer menyn som standard */
+    }
+
+    .nav-list.active {
+        display: flex; /* visar menyn när den är aktiv */
+    }
+
+    .nav-list li {
+        margin: 1rem 0; /* justerar mellanrum */
+    }
+
+    .menu-toggle {
+        display: flex; /* visar hamburgermenyn */
+    }
+    .footer-content {
+        flex-direction: column; /* Byt till kolumnlayout på små skärmar */
+        align-items: center; /* Centrera innehållet */
+        margin-bottom: 1rem;
+    }
+
+    .footer-content div {
+        margin-bottom: 1rem; /* Lägg till avstånd mellan sektionerna */
+    }
+}
+
+/* Footer styling */
+footer {
+    background: #B4AFA1;
+    color: #fff;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1rem;
+}
+
+.footer-content h3 {
+    color: #8A6843;
+    margin-bottom: 0.5rem;
+}
+
+.footer-content a {
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.footer-content a:hover {
+    color: #8A6843;
+}
+
+footer p {
+    margin-top: 1rem;
+}

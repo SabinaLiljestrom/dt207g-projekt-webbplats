@@ -1,3 +1,4 @@
+/* Grundläggande reset */
 * {
     margin: 0;
     padding: 0;
@@ -7,8 +8,13 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
+    background-size: cover;  
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("../images/background-phone.png"); 
 }
 
+/* Styling för header och navbar */
 header {
     background: #B4AFA1;
     color: #fff;
@@ -16,7 +22,7 @@ header {
 
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Gör att logotypen och menyn fördelas på utrymmet */
     align-items: center;
     padding: 1rem;
 }
@@ -29,11 +35,22 @@ header {
 
 .nav-list {
     list-style: none;
-    display: flex;
+    display: none; /* Döljer menyn som standard på mobiler */
+    flex-direction: column;
+    align-items: center;
+    background: #747F6C;
+    width: 100%;
+    position: absolute;
+    top: 60px; /* höjden av navbaren */
+    left: 0;
+}
+
+.nav-list.active {
+    display: flex; /* Visar menyn när den är aktiv */
 }
 
 .nav-list li {
-    margin-left: 2rem;
+    margin: 1rem 0;
 }
 
 .nav-list a {
@@ -46,8 +63,9 @@ header {
     color: #8A6843;
 }
 
+/* Hamburgermeny */
 .menu-toggle {
-    display: none;
+    display: flex;
     flex-direction: column;
     cursor: pointer;
 }
@@ -59,40 +77,50 @@ header {
     margin: 4px 0;
     transition: all 0.3s ease;
 }
+.container {
+    width: auto;
+    padding: 20px;
+    margin: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
 
-/* Responsiv styling */
-@media (max-width: 768px) {
-    .nav-list {
-        position: absolute;
-        top: 60px; /* höjden av navbaren */
-        left: 0;
-        width: 100%;
-        background: #747F6C;
-        flex-direction: column;
-        align-items: center;
-        display: none; /* döljer menyn som standard */
-    }
+}
 
-    .nav-list.active {
-        display: flex; /* visar menyn när den är aktiv */
-    }
+h1, h2 {
+    text-align: center;
+}
 
-    .nav-list li {
-        margin: 1rem 0; /* justerar mellanrum */
-    }
+form {
+    display: flex;
+    flex-direction: column;
+}
 
-    .menu-toggle {
-        display: flex; /* visar hamburgermenyn */
-    }
-    .footer-content {
-        flex-direction: column; /* Byt till kolumnlayout på små skärmar */
-        align-items: center; /* Centrera innehållet */
-        margin-bottom: 1rem;
-    }
+input {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+#loginForm {
 
-    .footer-content div {
-        margin-bottom: 1rem; /* Lägg till avstånd mellan sektionerna */
-    }
+    width: 300px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #DDDEDA;
+}
+button {
+    padding: 10px;
+    background-color: #747F6C;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #8A6843;
 }
 
 /* Footer styling */
@@ -105,7 +133,8 @@ footer {
 
 .footer-content {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
     margin-bottom: 1rem;
 }
 
@@ -125,4 +154,37 @@ footer {
 
 footer p {
     margin-top: 1rem;
+}
+
+/* Anpassning för större skärmar */
+@media (min-width: 769px) {
+    body {
+        background-image: url("../images/background-desktop.png"); 
+    }
+    .nav-list {
+        display: flex; /* Ändra till flexbox för att få menyn på en rad */
+        flex-direction: row;
+        position: static; /* Ta bort positionering för desktop */
+        width: auto; /* Tillåt menyn att ta så mycket utrymme den behöver */
+        margin-left: auto; /* Flytta menyn till höger */
+        background: none; /* Ta bort bakgrundsfärgen */
+    }
+
+    .nav-list li {
+        margin-left: 2rem; /* Lägg till mellanrum mellan menyalternativen */
+        margin-bottom: 0;
+    }
+
+    .menu-toggle {
+        display: none; /* Dölj hamburgermenyn på större skärmar */
+    }
+
+    .footer-content {
+        flex-direction: row; /* Ändra till radlayout på större skärmar */
+        justify-content: space-around;
+    }
+
+    .footer-content div {
+        margin-bottom: 0; /* Ta bort extra mellanrum mellan sektionerna */
+    }
 }

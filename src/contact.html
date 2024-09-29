@@ -24,9 +24,19 @@
         </nav>
     </header>
     <div class="container">
-    <section id="home">
-        <h1>Välkommen till Nordic Bites Café!</h1>
-    </section>
+        <h2>Kontakta oss</h2>
+        <form id="contactForm">
+            <label for="name">Namn:</label>
+            <input type="text" id="name" name="name" placeholder="Ditt namn" required>
+    
+            <label for="email">E-postadress:</label>
+            <input type="email" id="email" name="email" placeholder="Din e-postadress" required>
+    
+            <label for="message">Meddelande:</label>
+            <textarea id="message" name="message" rows="5" placeholder="Ditt meddelande" required></textarea>
+    
+            <button type="submit">Skicka meddelande</button>
+        </form>
     </div>
     <footer>
         <div class="footer-content">

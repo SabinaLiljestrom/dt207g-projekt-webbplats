@@ -84,8 +84,12 @@ header {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    
 }
-
+.menu-section {
+    max-width: 600px;
+    margin: 0 auto;
+}
 h1, h2 {
     text-align: center;
 }
@@ -93,12 +97,16 @@ h1, h2 {
 form {
     display: flex;
     flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
 }
 .content {
     display: flex;
     flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
 }
-.form-section, .menu-section {
+.form-section {
     flex: 1;
 }
 
@@ -217,7 +225,7 @@ footer p {
         align-items: flex-start;
     }
 
-    .form-section, .menu-section {
+    .form-section {
         width: 45%;
         margin: 10px;
     }

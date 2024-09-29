@@ -84,7 +84,6 @@ header {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
-
 }
 
 h1, h2 {
@@ -94,6 +93,13 @@ h1, h2 {
 form {
     display: flex;
     flex-direction: column;
+}
+.content {
+    display: flex;
+    flex-direction: column;
+}
+.form-section, .menu-section {
+    flex: 1;
 }
 
 input {
@@ -187,4 +193,30 @@ footer p {
     .footer-content div {
         margin-bottom: 0; /* Ta bort extra mellanrum mellan sektionerna */
     }
+    .content {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .form-section, .menu-section {
+        width: 45%;
+        margin: 10px;
+    }
+
+/* Styling för menydata */
+.menu-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.menu-item h3 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.menu-item p {
+    margin: 5px 0;
+}
 }

@@ -128,7 +128,25 @@ button {
 button:hover {
     background-color: #8A6843;
 }
-
+.menu-item {
+    display: flex;               /* Använd flexbox */
+    flex-direction: column;      /* Ställ in riktning på flexbox till kolumn */
+    margin-bottom: 15px;        /* Utrymme mellan rätterna */
+    padding: 10px;              /* Utrymme runt varje maträtt */
+    border: 1px solid #ddd;     /* Gräns runt varje maträtt */
+    border-radius: 5px;         /* Rundade hörn */
+    background-color: #f9f9f9;  /* Bakgrundsfärg */
+}
+/* Input-fält */
+input[type="text"],
+input[type="number"] {
+    flex: 1;                    /* Gör att input-fälten växer för att fylla utrymmet */
+    padding: 8px;               /* Utrymme inuti fälten */
+    margin-right: 10px;         /* Utrymme mellan fälten */
+    border: 1px solid #ccc;     /* Gräns runt input-fälten */
+    border-radius: 4px;         /* Rundade hörn */
+    font-size: 16px;            /* Större textstorlek */
+}
 /* Footer styling */
 footer {
     background: #B4AFA1;

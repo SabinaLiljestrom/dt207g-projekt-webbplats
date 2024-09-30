@@ -16,8 +16,7 @@ body {
 
 /* Styling för header och navbar */
 header {
-    background: #B4AFA1;
-    color: #fff;
+    color: #8A6843;
 }
 
 .navbar {
@@ -25,24 +24,35 @@ header {
     justify-content: space-between; /* Gör att logotypen och menyn fördelas på utrymmet */
     align-items: center;
     padding: 1rem;
+    z-index: 10;
 }
 
 .logo {
-    color: #8A6843;
-    font-size: 1.5rem;
-    font-weight: bold;
+    display: flex; /* Gör att innehållet visas i en rad */
+    align-items: center; /* Vertikalcentrera texten och bilden */
 }
 
+.logo img {
+   max-width: 80px;
+    margin-right: 10px; /* Ger lite utrymme mellan logotypen och texten */
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #8A6843;
+}
 .nav-list {
     list-style: none;
     display: none; /* Döljer menyn som standard på mobiler */
     flex-direction: column;
     align-items: center;
-    background: #747F6C;
+    background: #fff;
     width: 100%;
     position: absolute;
     top: 60px; /* höjden av navbaren */
     left: 0;
+    z-index: 10;
 }
 
 .nav-list.active {
@@ -54,13 +64,15 @@ header {
 }
 
 .nav-list a {
-    color: #fff;
+    color: #8A6843;
+    background-color: #fff;
     text-decoration: none;
     transition: color 0.3s;
+    font-weight: bold;
 }
 
 .nav-list a:hover {
-    color: #8A6843;
+    color: #747F6C;
 }
 
 /* Hamburgermeny */
@@ -73,7 +85,7 @@ header {
 .bar {
     height: 4px;
     width: 25px;
-    background: #fff;
+    background: #8A6843;
     margin: 4px 0;
     transition: all 0.3s ease;
 }
@@ -89,6 +101,13 @@ header {
 .menu-section {
     max-width: 600px;
     margin: 0 auto;
+    display: flex;               /* Använd flexbox */
+    flex-direction: column;      /* Ställ in riktning på flexbox till kolumn */
+    margin-bottom: 15px;        /* Utrymme mellan rätterna */
+    padding: 10px;              /* Utrymme runt varje maträtt */
+    border: 1px solid #ddd;     /* Gräns runt varje maträtt */
+    border-radius: 5px;         /* Rundade hörn */
+    background-color: #f9f9f9; 
 }
 h1, h2 {
     text-align: center;
@@ -141,9 +160,6 @@ button:hover {
     flex-direction: column;      /* Ställ in riktning på flexbox till kolumn */
     margin-bottom: 15px;        /* Utrymme mellan rätterna */
     padding: 10px;              /* Utrymme runt varje maträtt */
-    border: 1px solid #ddd;     /* Gräns runt varje maträtt */
-    border-radius: 5px;         /* Rundade hörn */
-    background-color: #f9f9f9;  /* Bakgrundsfärg */
 }
 /* Input-fält */
 input[type="text"],
@@ -154,6 +170,32 @@ input[type="number"] {
     border: 1px solid #ccc;     /* Gräns runt input-fälten */
     border-radius: 4px;         /* Rundade hörn */
     font-size: 16px;            /* Större textstorlek */
+}
+
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.mySlides {
+    display: none; /* Döljer alla bilder som standard */
+}
+
+img {
+    width: 100%; /* Gör bilderna responsiva */
+    height: auto; /* Bibehåller proportioner */
+}
+
+.fade {
+    animation: fade 1.5s ease-in-out forwards; /* Fade-in animation */
+}
+
+@keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 /* Footer styling */
 footer {

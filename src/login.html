@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nordic Bites Café</title>
     <link rel="stylesheet" href="./styles/styles.css">
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
 </head>
 <body>
     <header>
         <nav class="navbar">
-            <div class="logo">Nordic Bites Café</div>
+            <div class="logo"><a href="./index.html"><img src="./images/logo.png" alt="logotyp"></a>Nordic Bites Café</div>
             <div class="menu-toggle" id="mobile-menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -20,6 +21,7 @@
                 <li><a href="./menu.html">Meny</a></li>
                 <li><a href="./about.html">Om oss</a></li>
                 <li><a href="./contact.html">Kontakt</a></li>
+                <li><a href="menu.html#takeaway-form">Beställ Take Away</a></li>
             </ul>
         </nav>
     </header>
@@ -28,17 +30,17 @@
     <section id="login">
         <form id="loginForm">
             <h2>Logga in</h2>
-            <label for="username">Användarnamn:</label>
+            <label for="loginUsername">Användarnamn:</label>
             <input type="text" id="loginUsername" required>
             <br>
-            <label for="password">Lösenord:</label>
+            <label for="loginPassword">Lösenord:</label>
             <input type="password" id="loginPassword" required>
             <br>
             <button type="submit">Logga in</button>
         </form>
         <p id="error-message"></p>
-    </div>
     </section>
+</div>
     <footer>
         <div class="footer-content">
             <div class="opening-hours">

@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meny</title>
     <link rel="stylesheet" href="./styles/styles.css">
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
 </head>
 <body>
     <header>
         <nav class="navbar">
-            <div class="logo">Nordic Bites Café</div>
+            <div class="logo"><a href="./index.html"><img src="./images/logo.png" alt="logotyp"></a>Nordic Bites Café</div>
             <div class="menu-toggle" id="mobile-menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -20,18 +21,19 @@
                 <li><a href="./menu.html">Meny</a></li>
                 <li><a href="./about.html">Om oss</a></li>
                 <li><a href="./contact.html">Kontakt</a></li>
+                <li><a href="#takeaway-form" class="takeaway-btn">Beställ Take Away</a></li>
             </ul>
         </nav>
     </header>
     <div class="container">
         <h1>Meny</h1>
+        <div class="menu-container">
         <div class="menu-section">
             <h2>Veckans lunch</h2>
             <div id="menuData"></div>
         </div>
-        <div class="menu-section2">
+        <div class="menu-section">
             <h2>Alltid på menyn</h2>
-            <div class="menu-section">
                 <div class="menu-item">
                 <h3>Kardemummabulle</h3>
                 <p>En mjuk och saftig bulle med en rik smak av kardemumma, bakad enligt traditionellt recept.</p>
@@ -43,35 +45,69 @@
                 <p>Pris: 35kr</p>
                 </div>
                 <div class="menu-item">
-                <h3>Blåbärspag med vaniljsås</h3>
+                <h3>Blåbärspaj med vaniljsås</h3>
                 <p>En klassisk nordisk blåbärspaj, serverad varm med vaniljsås.</p>
                 <p>Pris: 65kr</p>
                 </div>
                 <div class="menu-item">
-                <h3>Kardemummabulle</h3>
-                <p>En mjuk och saftig bulle med en rik smak av kardemumma, bakad enligt traditionellt recept.</p>
+                <h3>Wienerbröd</h3>
+                <p>En luftigt och frasig bakverk med vanilj och blåbärs fyllning. </p>
                 <p>Pris: 35kr</p>
                 </div>
                 <div class="menu-item">
-                <h3>Kardemummabulle</h3>
-                <p>En mjuk och saftig bulle med en rik smak av kardemumma, bakad enligt traditionellt recept.</p>
+                <h3>Rabarberpaj med vaniljsås</h3>
+                <p>En knäckig smulpaj med mjuk rabarber.</p>
                 <p>Pris: 35kr</p>
                 </div>
              </div>
         </div>
+        <div class="container" id="takeaway-form">
+            <h2>Beställ Take Away Veckans Lunch</h2>
+            <form id="orderForm">
+                <div class="form-section">
+                    <label for="name">Namn:</label>
+                    <input type="text" id="name" name="name" placeholder="Ditt namn" required>
+                </div>
+                <div class="form-section">
+                    <label for="phone">Telefonnummer:</label>
+                    <input type="text" id="phone" name="phone" placeholder="Ditt telefonnummer" required>
+                </div>
+                <div class="form-section">
+                    <label for="menuDropdown">Välj menyobjekt:</label>
+                    <select id="menuDropdown" name="menuItem">
+                        <!-- Menyobjekt kommer att laddas här automatiskt -->
+                    </select>
+                </div>
+                <div class="form-section">
+                    <label for="quantity">Antal:</label>
+                    <input type="number" id="quantity" name="quantity" min="1" value="1" required>
+                </div>
+                <button type="button" id="addToCart">Lägg till i varukorgen</button>
+        
+                <!-- Visa varukorg här -->
+                <div id="orderList"></div>
+        
+                <div class="form-section">
+                    <label for="pickupTime">Hämttid:</label>
+                    <input type="time" id="pickupTime" name="pickupTime" required>
+                </div>
+                <button type="submit">Skicka beställning</button>
+            </form>
+        </div>
+              
     </div>
     <footer>
         <div class="footer-content">
+            <div class="social-media">
+                <h3>Följ oss</h3>
+                <a href="#" target="_blank">Facebook</a><br>
+                <a href="#" target="_blank">Instagram</a>
+            </div>
             <div class="opening-hours">
                 <h3>Öppettider</h3>
                 <p>Måndag - Fredag: 07:00 - 18:00</p>
                 <p>Lördag: 09:00 - 16:00</p>
                 <p>Söndag: Stängt</p>
-            </div>
-            <div class="social-media">
-                <h3>Följ oss</h3>
-                <a href="#" target="_blank">Facebook</a><br>
-                <a href="#" target="_blank">Instagram</a>
             </div>
             <div class="quick-links">
                 <h3>Snabblänkar</h3>
@@ -81,6 +117,7 @@
         </div>
         <p>&copy; 2024 Nordic Bites Café. Alla rättigheter förbehållna.</p>
     </footer>
+    <script src="./scripts/script.js"></script>
     <script src="./scripts/menu.js"></script>
 </body>
 </html>

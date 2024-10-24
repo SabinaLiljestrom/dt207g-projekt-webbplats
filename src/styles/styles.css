@@ -6,7 +6,8 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
     line-height: 1.6;
     background-size: cover;  
     background-position: center;
@@ -69,6 +70,7 @@ header {
     text-decoration: none;
     transition: color 0.3s;
     font-weight: bold;
+    font-size: 20px;
 }
 
 .nav-list a:hover {
@@ -90,16 +92,17 @@ header {
     transition: all 0.3s ease;
 }
 .container {
-    width: auto;
+    width: 85%;
     padding: 20px;
-    margin: 20px;
+    margin: 20px auto;
     background-color: #fff;
+    
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
     
 }
 .menu-section {
-    max-width: 600px;
+    max-width:700px;
     margin: 0 auto;
     display: flex;               /* Använd flexbox */
     flex-direction: column;      /* Ställ in riktning på flexbox till kolumn */
@@ -107,10 +110,16 @@ header {
     padding: 10px;              /* Utrymme runt varje maträtt */
     border: 1px solid #ddd;     /* Gräns runt varje maträtt */
     border-radius: 5px;         /* Rundade hörn */
-    background-color: #f9f9f9; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
+
 h1, h2 {
     text-align: center;
+    color: #8A6843;
+    font-family: 'Raleway', sans-serif;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 36px;
 }
 
 form {
@@ -122,7 +131,6 @@ form {
 .content {
     display: flex;
     flex-direction: column;
-    max-width: 600px;
     margin: 0 auto;
 }
 .form-section {
@@ -174,7 +182,7 @@ input[type="number"] {
 
 .slideshow-container {
     position: relative;
-    max-width: 100%;
+    max-width: 75%;
     margin: auto;
     overflow: hidden;
     z-index: 1;
@@ -197,23 +205,85 @@ img {
     from { opacity: 0; }
     to { opacity: 1; }
 }
+.menu-container {
+    display: flex;
+    flex-direction: column; /* Kolumnlayout som standard för mindre skärmar */
+    gap: 20px; /* Avstånd mellan sektionerna */
+    margin-bottom: 20px;
+}
+/* Formulärstil för Take Away-beställning */
+#takeaway-form {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+#takeaway-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-section {
+    margin-bottom: 15px;
+}
+
+.form-section label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="time"],
+select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin: 5px;
+    background-color: #747F6C;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #8A6843;
+}
 /* Footer styling */
 footer {
     background: #B4AFA1;
     color: #fff;
-    padding: 2rem 1rem;
+    padding: 1rem 1rem;
     text-align: center;
 }
 
 .footer-content {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; /* Centrerar alla delar vertikalt */
+    justify-content: center; /* Centrerar alla delar horisontellt */
     margin-bottom: 1rem;
 }
 
 .footer-content h3 {
-    color: #8A6843;
+    color: #674D32;
+    margin-bottom: 0.5rem;
+}
+
+.footer-content p, 
+.footer-content a {
+    text-align: center; /* Centrerar paragrafer och länkar */
     margin-bottom: 0.5rem;
 }
 
@@ -229,11 +299,16 @@ footer {
 footer p {
     margin-top: 1rem;
 }
-
 /* Anpassning för större skärmar */
-@media (min-width: 769px) {
+@media (min-width: 910px) {
     body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
         background-image: url("../images/background-desktop.png"); 
+    }
+    .content {
+        flex: 1;
     }
     .nav-list {
         display: flex; /* Ändra till flexbox för att få menyn på en rad */
@@ -252,39 +327,54 @@ footer p {
     .menu-toggle {
         display: none; /* Dölj hamburgermenyn på större skärmar */
     }
-
+    .menu-container {
+        flex-direction: row; /* Ligger bredvid varandra på större skärmar */
+        justify-content: space-between; /* Sprider sektionerna jämnt */
+    }
+   
+}
     .footer-content {
-        flex-direction: row; /* Ändra till radlayout på större skärmar */
-        justify-content: space-around;
+        flex-direction: row;
+        justify-content: center; /* Centrerar alla delar horisontellt även på stora skärmar */
+        align-items: center; /* Centrerar sektionerna vertikalt */
     }
 
     .footer-content div {
-        margin-bottom: 0; /* Ta bort extra mellanrum mellan sektionerna */
+        margin-bottom: 0; /* Ta bort extra mellanrum på stora skärmar */
+        margin-left: 5%;
+        margin-right: 5%;
+        text-align: center; /* Håller texten centrerad */
+        width: auto; /* Låt divarna anpassa sin bredd automatiskt */
     }
     .content {
+        display: flex; 
         flex-direction: row;
         justify-content: space-between;
         align-items: flex-start;
     }
 
-    .form-section {
-        width: 45%;
+    .form-section, .menu-section-admin {
+        width: 60%;
         margin: 10px;
+        box-sizing: border-box; /* Säkerställer att padding inte ökar bredden */
+        flex-direction: column;
     }
 
 /* Styling för menydata */
-.menu-item {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin: 10px 0;
-}
 
-.menu-item h3 {
-    margin: 0;
-    font-size: 1.5em;
-}
+    .menu-item {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin: 10px 0;
+    }
 
-.menu-item p {
-    margin: 5px 0;
-}
-}
+    .menu-item h3 {
+        margin: 0;
+        font-size: 1.5em;
+    }
+
+    .menu-item p {
+        margin: 5px 0;
+    }
+
+
